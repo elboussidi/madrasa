@@ -21,46 +21,20 @@
 
 <body>
      <?php   include '../header.php'; ?>
+     <br><br><br>
+  <?php include 'x.php'; ?>   
     
-    <br><br><br>
-    
-    
-   
-<div class="container">
-    <div class="row">
-    <div class="col-md-2">
-      <div class="card-counter primary">
-        <i class="fa fa-code-fork"></i>
-        <span class="count-numbers">12</span>
-        <span class="count-name">Flowz</span>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card-counter danger">
-        <i class="fa fa-ticket"></i>
-        <span class="count-numbers">599</span>
-        <span class="count-name">Instances</span>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card-counter success">
-        <i class="fa fa-database"></i>
-        <span class="count-numbers">6875</span>
-        <span class="count-name">Data</span>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card-counter info">
-        <i class="fa fa-users"></i>
-        <span class="count-numbers">35</span>
-        <span class="count-name">Users</span>
-      </div>
-    </div>
-  </div>
-</div>
+  
+     <?php 
+            if(isset($_SESSION['lev'] )){
+       $lev=$_SESSION['lev'];
+       }
+       if($lev != "derecteur" ){
+           header("location:../index.php");
+         
+       }
+            ?>
+               
 
     <!--  menu  -->
     
@@ -72,9 +46,9 @@
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active"  href="prof.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-home" aria-selected="true">profile</a>
         <a class="nav-link"   href="member.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-profile" aria-selected="false">member</a>
-      <a class="nav-link" data-toggle="pill" href="index.php?status=student" role="tab" aria-controls="v-pills-messages" aria-selected="false">student</a>
-     <a class="nav-link"  data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+        <a class="nav-link" href="student.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">student</a>
+     <a class="nav-link" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+      <a class="nav-link" id="v-pills-settings-tab"  href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
     </div>
   </div>
         <div class="col-8">
@@ -91,20 +65,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script >
-       
-function toUp(){
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop=0;
-}
+ 
 </script>
 
     </body>
 </html>
-
-
-
-
-
-
-
 

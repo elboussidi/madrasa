@@ -20,6 +20,10 @@ if(!$conect){
 <?php 
 
  session_start() ;
+ if(isset($_SESSION['lev'] )){
+  if($_SESSION['lev'] == "prof" or $_SESSION['lev'] == "derecteur" ){
+        header("location:../index.php");
+ }}
 ?>
   
 <!DOCTYPE html>
@@ -43,7 +47,7 @@ if(!$conect){
 <body>
     <?php   include '../header.php'; ?>
     <br><br><br><br><br>
-    
+     <div class="col-md-8 offset-md-2">
     <?php 
     
 
@@ -83,7 +87,7 @@ if(!$conect){
     
     ?>
     
-    
+     </div>
     
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
     <div class="container">

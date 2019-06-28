@@ -10,10 +10,10 @@ if(!$conect){
     die("عذرا لم يتم الاتصال بقاعدة البيانات");
 }
  else {
-   echo 'تم الاتصال بنجاح  ';
+ //   echo 'تم الاتصال بنجاح  ';
  }
 
-  session_start();
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -136,65 +136,65 @@ if(!$conect){
     
     
     
-    <?php//PROGAME REGESTER PAGE SEND INFO TO DATABASE 
-    
-    if(isset($_POST['reg'])){
+    <?php//PROGAME REGESTER PAGE SEND INFO TO DATABASE    $first_name=$_POST['first_name'];
+     //   $last_name=$_POST['last_name'];
+       // $email=$_POST['email'];
+       // $password=$_POST['password'];
+       // $password2=$_POST['password_confirm'];
+      session_start();
+if(isset($_SESSION['lev'] )){
+$lev=$_SESSION['lev'];
 
-        $first_name=$_POST['first_name'];
-        $last_name=$_POST['last_name'];
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-        $password2=$_POST['password_confirm'];
-        
-        header("location:index.php");
-    }//end frist if
-    
-    ?>
-    
+
+}
+if($lev !="derecteur"){
+    header("location:../index.php");
+}
+   ?>
     
 <div class="container register">
                 <div class="row">
                     <div class="col-md-3 register-left">
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                        <h3>Welcome</h3>
+                        <h6><?php echo $lev; ?></h6>
                         <p>You are 30 seconds away from earning your own money!</p>
                         <input type="submit" name="" value="Login"/><br/>
                     </div>
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">usre</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">student</a>
                             </li>
-                        </ul><form method="POST" enctype="multipart/form-data" >
+                        </ul><form method="" action="../config.php" enctype="multipart/form-data" >
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Apply as a Employee</h3>
+                                <h3 class="register-heading">regester as user</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <input type="text" class="form-control"  name="uname"placeholder="First Name *" value="" />
                                         </div>
                                       
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                                            <input type="password" class="form-control" name="upassword"placeholder="Password *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
+                                            <input type="password" class="form-control" name="upassword2" placeholder="Confirm Password *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="date" class="form-control"  placeholder="date" value="" />
+                                            <input type="date" class="form-control" name="udate" placeholder="date" value="" />
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl">
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="male" checked>
+                                                    <input type="radio"  name="ugender" value="male" checked>
                                                     <span> Male </span> 
                                                 </label>
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="female">
+                                                    <input type="radio"  name="ugender"value="female">
                                                     <span>Female </span> 
                                                 </label>
                                             </div>
@@ -202,13 +202,13 @@ if(!$conect){
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                                            <input type="email" class="form-control"name="uemail" placeholder="Your Email *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
+                                            <input type="phone" minlength="10" maxlength="10" name="uphone" class="form-control" placeholder="Your Phone *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-control">
+                                            <select class="form-control" name="urole">
                                                 <option class="hidden"  selected disabled>Please select your role</option>
                                                 <option>derecteur</option>
                                                 <option>prof</option>
@@ -220,19 +220,19 @@ if(!$conect){
     <span class="input-group-text" id="inputGroupFileAddon01">IMG PROFILE</span>
   </div>
   <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+    <input type="file" class="custom-file-input"name="file" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label"  for="inputGroupFile01">Choose file</label>
   </div>
 </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="position" value="" />
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                        <input type="submit" class="btnRegister" name="reg" value="Register"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">Apply as a Hirer</h3>
+                                <h3  class="register-heading">regester as student</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -254,7 +254,8 @@ if(!$conect){
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="`position" value="" />
                                         </div>
-                                    <input type="submit" class="btnRegister"  name="reg"value="Register"/>
+                                    
+                                    <input type="submit" class="btnRegister"  name="reg" value="Register"/>
                                     </div>
                                 </div>
                             </div></form>
@@ -262,11 +263,21 @@ if(!$conect){
                     </div>
                 </div>
 
-            </div>
+          <?php
+          
+    if(isset($_POST['reg'])){
+
+    echo 'dsdsdsdsddsds';
+        header("location:index.php");
+    }//end frist if
+    
+    ?>
+    
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    
 
 
     </body>

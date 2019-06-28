@@ -4,11 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/madrasa/admin/login.php</file>
-            <file>file:/C:/xampp/htdocs/madrasa/header.php</file>
             <file>file:/C:/xampp/htdocs/madrasa/admin/index.php</file>
-            <file>file:/C:/xampp/htdocs/madrasa/css/style.css</file>
-            <file>file:/C:/xampp/htdocs/madrasa/footer.php</file>
-            <file>file:/C:/xampp/htdocs/madrasa/admin/prof.php</file>
+            <file>file:/C:/xampp/htdocs/madrasa/admin/student.php</file>
+            <file>file:/C:/xampp/htdocs/madrasa/admin/member.php</file>
         </group>
     </open-files>
 </project-private>
