@@ -1,6 +1,8 @@
-<?php include '../config.php'; 
+<?php
+require '../connect.php';
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <title>admin page</title>

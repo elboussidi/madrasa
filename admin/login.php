@@ -1,25 +1,11 @@
-  <?php 
-$localhost="localhost";
-$username="root";
-$password="";
-$database="madrasa";
-$conect=mysqli_connect($localhost,$username,$password,$database);
-
-if(!$conect){
-    die("عذرا لم يتم الاتصال بقاعدة البيانات");
-}
- else {
-   echo 'تم الاتصال بنجاح  ';
- }
-
-    
-
+ <?php
+require '../connect.php';
 
 ?>
 
 <?php 
 
- session_start() ;
+
  if(isset($_SESSION['lev'] )){
   if($_SESSION['lev'] == "prof" or $_SESSION['lev'] == "derecteur" ){
         header("location:../index.php");

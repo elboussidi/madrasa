@@ -1,6 +1,7 @@
- <?php require 'config.php ';
+<?php
+require 'connect.php';
 
-session_start() ;?>
+?>
 
 <body >
     

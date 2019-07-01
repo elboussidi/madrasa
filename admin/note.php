@@ -1,20 +1,7 @@
-  <?php 
-$localhost="localhost";
-$username="root";
-$password="";
-$database="madrasa";
-$conect=mysqli_connect($localhost,$username,$password,$database);
+ <?php
+require '../connect.php';
 
-if(!$conect){
-    die("عذرا لم يتم الاتصال بقاعدة البيانات");
-}
- else {
-   echo 'تم الاتصال بنجاح  ';
- }
-  
-  session_start();
-  
-?>   
+?>
 <!DOCTYPE html>
 <html lang="en">
     <title>note</title>
