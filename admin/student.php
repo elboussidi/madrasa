@@ -51,7 +51,7 @@ if(!$conect){
         <a class="nav-link active"  href="prof.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-home" aria-selected="true">profile</a>
       <a class="nav-link"  href="member.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-profile" aria-selected="false">member</a>
       <a class="nav-link"  href="student.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">student</a>
-     <a class="nav-link"   href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+      <a class="nav-link"   href="note.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">note</a>
       <a class="nav-link" id="v-pills-settings-tab" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
     </div>
   </div>
@@ -117,8 +117,8 @@ if(!$conect){
                         <td><?php echo $lev;?></td>
 		<td><span class="status text-success">&bull;</span><?php ?><?php echo $email;?> </td>
 			<td>
-			<a href="del.php?idm=<?php echo $id;?>" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i> del  </a>
-                        <a href="prof.php" class="delete" title="Delete" data-toggle="tooltip"> note</a>
+			<a href="del.php?ids=<?php echo $id;?>" class="btn btn-secondary" title="Settings" data-toggle="tooltip"> del  </a>
+                       <a href="add.php?id=<?php echo $id; ?>&name=<?php echo $name; ?>" > <button type="button" class="btn btn-secondary">add note</button></a> 
                         
 						</td>
                     </tr>

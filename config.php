@@ -35,7 +35,7 @@ if(!$conect){
          $path='http://localhost/madrasa/img/'.$_FILES['file']['name'];
       $dir="img/".$_FILES['file']['name'];
         move_uploaded_file($_FILES['file']['tmp_name'],$dir);
-        
+        echo $path;
    if($upassword =! $upassword2){
      echo '<div class="alert alert-danger" role="alert">
  sorry eroor password !
@@ -52,7 +52,7 @@ if(!$conect){
     alert("good");
     
     </script>';
-       header("location:admin/index.php");
+       header("location:admin/index/member.php");
     } else {
         
     

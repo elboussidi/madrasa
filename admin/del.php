@@ -23,9 +23,6 @@ if(!$conect){
 if($_GET['idm']){
     $idm=$_GET['idm'];
     
-    
-  
-    
  $qdel="DELETE FROM `usr` WHERE `id`='$idm';";
  if(mysqli_query($conect, $qdel)){
      
@@ -36,3 +33,19 @@ if($_GET['idm']){
     
     
 }
+if ($_GET['ids']) {
+     $ids=$_GET['ids'];
+   $qdel="DELETE FROM `usr` WHERE `id`='$ids';";
+ if(mysqli_query($conect, $qdel)){
+     
+       $qdel2="DELETE FROM `note` WHERE `id`='$ids';";
+ if(mysqli_query($conect, $qdel2)){
+     
+     header("location:student.php");
+
+     
+
+   }  
+}   
+ }  
+
