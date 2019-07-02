@@ -4,7 +4,7 @@ require '../connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <title>add note</title>
+    <title>update note</title>
      <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -51,10 +51,11 @@ require '../connect.php';
        
      
 <?php   
-if(isset($_GET['id']) and isset($_GET['name'])  ) {
+if(isset($_GET['id']) ) {
 $idn=$_GET['id'];
-$namen=$_GET['name'];
+
 }
+
 ?>
 
 
@@ -65,8 +66,7 @@ $namen=$_GET['name'];
         <div class="col-md-12">  
                         <div class="alert alert-success" style="display:none;">
                 <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order</div> 
-                <table class="table"> <div class="alert alert-info" role="alert"> &emsp; &emsp; &emsp; &emsp; note student : <?php echo $namen; ?> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; nember id :<?php echo $idn; ?></div>
-                <thead>
+                <table class="table">     <thead>
                     <tr>
                         
                         <th>
@@ -88,22 +88,39 @@ $namen=$_GET['name'];
                     </tr>
                 </thead>
                 <tbody>
-                <form  method="POST">
-                    <tr class="active">
+   <?php                    
+$reed="SELECT * FROM `note` WHERE `id`=$idn ";
+$reedqr= mysqli_query($conect, $reed);
+if(!$reedqr){
+    die("sorry");
+    
+} else {   
+//    echo ' <div class="post">';
+ while ($row2 = mysqli_fetch_assoc($reedqr)) {
+       
+    $en=$row2['en'];
+    $ar=$row2['ar'];
+    $fr=$row2['fr'];
+    $pc=$row2['pc']; 
+    $svt=$row2['svt']; 
+ }
+    echo "
+                <form  method='POST'>
+                    <tr class='active'>
                        
                         <td>
-                          <input class="in" type="text"  name="en" >
+                          <input class='in' type='text' value='$en' name='en' >
                         </td>
                         <td>
-                         <input class="in" type="text"  name="ar" >
+                         <input class='in' type='text' value='$ar'  name='ar' >
                         </td>
                           <td>
-                          <input class="in" type="text"  name="fr" >
+                          <input class='in' type='text' value='$fr' name='fr' >
                             
                         </td>  <td>
-                            <input class="in" type="text"  name="pc" >
+                            <input class='in' type='text' value='$pc'  name='pc' >
                         </td>  <td>
-                          <input class="in" type="text"  name="svt" >
+                          <input class=in' type='text' value='$svt' name='svt' >
                         </td>
                        
                     </tr>
@@ -117,46 +134,34 @@ $namen=$_GET['name'];
         </div>
     </div>
 </div>
-          <center> <input  class="btn btn-success" type="submit"  name="add" value="add" > </center> 
+          <center> <input  class='btn btn-success' type='submit'  name='update' value='update' > </center> 
             
             
             
               </form>
+                ";
                 
-                
-                
-                <?php 
-                if(isset($_POST['add'])){
+}
                
+                if(isset($_POST['update'])){
+              
+                    
                      $en= $_POST['en'];  
                        $ar= $_POST['ar'];  
                          $fr= $_POST['fr'];  
                            $pc= $_POST['pc'];  
                              $svt= $_POST['svt'];  
-                             
-                             
-$tst="SELECT * FROM `note`";
-$qtst= mysqli_query($conect, $tst);
-if($qtst){
-     while ($row2=mysqli_fetch_assoc($qtst)) {
-         $nametst= $row2['name'];
-
-}
-if($namen == $nametst){
-     echo ' <br>  <div class="col-md-8 offset-md-2"><div class="alert alert-danger" role="alert"> this item alredy in table <br> thank your for call programer 0677076287</div>';
-} else {
-    
 
      
-                $ad="INSERT INTO `note` (`id`, `name`,`en`, `ar`, `fr`, `pc`, `svt`) VALUES ('$idn', '$namen', '$en', '$ar', '$fr', '$pc', '$svt')";
-                $adq=$conect->query($ad) ;
-                if($adq){
-                    echo ' <br>  <div class="col-md-8 offset-md-2"><div class="alert alert-success" role="alert"> ok note has been added </div>';
+                $up="UPDATE `note` SET `en`='$en',`ar`='$ar',`fr`='$fr',`pc`='$pc',`svt`='$svt' WHERE `id`='$idn'";
+                $upq=$conect->query($up) ;
+                if($upq){
+                    echo ' <br>  <div class="col-md-8 offset-md-2"><div class="alert alert-success" role="alert"> ok note has been update </div>';
                 } else {
                     // echo '<div class="alert alert-danger" role="alert"> error add</div></div>';    
-                     die("error add".mysqli_error($conect));                
-}}}
-                 }
+                     die("error update".mysqli_error($conect));                
+}}
+                 
                 ?>
 
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

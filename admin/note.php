@@ -83,6 +83,9 @@ require '../connect.php';
                                <th>
                           resaulte
                         </th>
+                           <th>
+                         action
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -104,9 +107,9 @@ require '../connect.php';
                          $total= mysqli_num_rows($rednotq);
 $m=($en1+$fr1+$pc1+$svt1+$ar1)/5;
 if($m<=10){
-    $res="راسب";
+    $res="<div> راسب</div>";
 } else {
-   $res="ناجح";  
+   $res="<div> ناجح </div>";  
 }
 
                         echo "
@@ -135,6 +138,11 @@ if($m<=10){
                           <td>
                            $res
                         </td>
+                         <td>
+                           <a href='del.php?idnote=$id1' class='btn btn-danger' title='حدف النقطة' data-toggle='tooltip'> del  </a>
+                       <a href='update.php?id=$id1'> <button type='button'  title='تعديل' class='btn btn-primary'>update</button></a> 
+                        
+                        </td>
                     </tr>
                     
                     
@@ -143,7 +151,7 @@ if($m<=10){
                 </tbody>
      
      ";} }
- echo "total note save : " . $total ;
+ echo " <div class='alert alert-info' role='alert'> total note save :  ". $total  ." </div>" ;
                ?>      
                     
              </table>

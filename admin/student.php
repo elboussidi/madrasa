@@ -4,7 +4,7 @@ require '../connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <title>member</title>
+    <title>student</title>
      <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -104,8 +104,8 @@ require '../connect.php';
                         <td><?php echo $lev;?></td>
 		<td><span class="status text-success">&bull;</span><?php ?><?php echo $email;?> </td>
 			<td>
-			<a href="del.php?ids=<?php echo $id;?>" class="btn btn-secondary" title="Settings" data-toggle="tooltip"> del  </a>
-                       <a href="add.php?id=<?php echo $id; ?>&name=<?php echo $name; ?>" > <button type="button" class="btn btn-secondary">add note</button></a> 
+			<a href="del.php?ids=<?php echo $id;?>" class="btn btn-danger" title="Settings" data-toggle="tooltip"> del  </a>
+                       <a href="add.php?id=<?php echo $id; ?>&name=<?php echo $name; ?>" > <button type="button" class="btn btn-success">add note</button></a> 
                         
 						</td>
                     </tr>

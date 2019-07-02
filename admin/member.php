@@ -95,8 +95,8 @@ require '../connect.php';
                         <td><?php echo $lev;?></td>
 		<td><span class="status text-success">&bull;</span><?php ?><?php echo $email;?> </td>
 			<td>
-			<a href="del.php?idm=<?php echo $id;?>" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i> del  </a>
-			<a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i> update</a>
+			<a href="del.php?idm=<?php echo $id;?>" class="btn btn-danger" title="delete" data-toggle="tooltip"> del  </a>
+			
 						</td>
                     </tr>
 		<?php  } }?>			   
