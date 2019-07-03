@@ -17,12 +17,6 @@ require '../connect.php';
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     
-    <style>
-        .in{
-            width: 50%;
-        }
-    </style>
-    
 </head>
 
 
@@ -92,18 +86,18 @@ $namen=$_GET['name'];
                     <tr class="active">
                        
                         <td>
-                          <input class="in" type="text"  name="en" >
+                          <input class="form-control" type="text"  name="en" >
                         </td>
                         <td>
-                         <input class="in" type="text"  name="ar" >
+                         <input class="form-control" type="text"  name="ar" >
                         </td>
                           <td>
-                          <input class="in" type="text"  name="fr" >
+                          <input class="form-control" type="text"  name="fr" >
                             
                         </td>  <td>
-                            <input class="in" type="text"  name="pc" >
+                            <input class="form-control" type="text"  name="pc" >
                         </td>  <td>
-                          <input class="in" type="text"  name="svt" >
+                          <input class="form-control" type="text"  name="svt" >
                         </td>
                        
                     </tr>

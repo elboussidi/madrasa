@@ -39,7 +39,7 @@ require '../connect.php';
       <a class="nav-link"  href="member.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-profile" aria-selected="false">member</a>
       <a class="nav-link"  href="student.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">student</a>
       <a class="nav-link"   href="note.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">note</a>
-      <a class="nav-link" id="v-pills-settings-tab" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+      <a class="nav-link" id="v-pills-settings-tab" href="mynote.php?id=<?php echo $_SESSION['id']; ?>" role="tab"  aria-selected="false">MY NOTE</a>
     </div>
   </div>
         <div class="col-9">
