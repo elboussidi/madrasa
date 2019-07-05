@@ -26,33 +26,33 @@ require '../connect.php';
      <br><br><br>
   <?php include 'x.php'; ?>   
     
-  
-     <?php 
-            if(isset($_SESSION['lev'] )){
-       $lev=$_SESSION['lev'];
-       }
-       if($lev != "derecteur" ){
-           header("location:../index.php");
-         
-       }
-            ?>
-               
 
     <!--  menu  -->
     
     <br><br>
     
     
-    <div class="row">
-  <div class="col-3">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active"  href="prof.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-home" aria-selected="true">profile</a>
-        <a class="nav-link"   href="member.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-profile" aria-selected="false">member</a>
-        <a class="nav-link" href="student.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">student</a>
-        <a class="nav-link" href="note.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">note</a>
-      <a class="nav-link" href="mynote.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-settings" aria-selected="false">MY NOTE</a>
-     </div>
+    
+    
+        <div class='row'>
+  <div class='col-3'>
+    <div class='nav flex-column nav-pills' id='v-pills-tab' role='tablist' aria-orientation='vertical'>
+    <?php include 'slaid.php'; ?>
+    
+    </div>
   </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <div class="col-8">
      
                   

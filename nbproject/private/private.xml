@@ -5,11 +5,12 @@
         <group>
             <file>file:/C:/xampp/htdocs/madrasa/admin/add.php</file>
             <file>file:/C:/xampp/htdocs/madrasa/admin/update.php</file>
-            <file>file:/C:/xampp/htdocs/madrasa/admin/del.php</file>
-            <file>file:/C:/xampp/htdocs/madrasa/admin/reg.php</file>
+            <file>file:/C:/xampp/htdocs/madrasa/header.php</file>
+            <file>file:/C:/xampp/htdocs/madrasa/admin/index.php</file>
             <file>file:/C:/xampp/htdocs/madrasa/admin/student.php</file>
             <file>file:/C:/xampp/htdocs/madrasa/admin/note.php</file>
             <file>file:/C:/xampp/htdocs/madrasa/admin/member.php</file>
+            <file>file:/C:/xampp/htdocs/madrasa/admin/mynote.php</file>
         </group>
     </open-files>
 </project-private>

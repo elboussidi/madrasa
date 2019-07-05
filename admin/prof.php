@@ -34,16 +34,16 @@ require '../connect.php';
     <br><br>
     
     
-    <div class="row">
-  <div class="col-3">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active"  href="prof.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-home" aria-selected="true">profile</a>
-      <a class="nav-link"   href="member.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-profile" aria-selected="false">member</a>
-      <a class="nav-link"  href="index.php?status=student" role="tab" aria-controls="v-pills-messages" aria-selected="false">student</a>
-     <a class="nav-link"  href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+   
+        <div class='row'>
+  <div class='col-3'>
+    <div class='nav flex-column nav-pills' id='v-pills-tab' role='tablist' aria-orientation='vertical'>
+    <?php include 'slaid.php'; ?>
+    
     </div>
   </div>
+        
+      
         <div class="col-9">
         <div class="panel -info">
      <?php 

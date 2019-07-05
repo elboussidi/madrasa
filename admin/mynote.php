@@ -19,7 +19,9 @@ require '../connect.php';
     
 </head>
 <style>
-    
+    #prof{
+        margin-left: 30px ;
+    }
     .t{
       direction: rtl;
       border-left: 1px solid #0062cc;
@@ -77,17 +79,23 @@ table tr td{
     <br><br>
     
     
-    <div class="row">
-  <div class="col-3">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active"  href="prof.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-home" aria-selected="true">profile</a>
-      <a class="nav-link"   href="member.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-profile" aria-selected="false">member</a>
-      <a class="nav-link"  href="student.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">student</a>
-     <a class="nav-link" href="note.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">note</a>
-     <a class="nav-link" href="mynote.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-settings" aria-selected="false">MY NOTE</a>
+   
+        <div class='row'>
+  <div class='col-3'>
+    <div class='nav flex-column nav-pills' id='v-pills-tab' role='tablist' aria-orientation='vertical'>
+    <?php include 'slaid.php'; 
+      
+  if(isset($_SESSION['lev'])){
+  
+    } else {
+          echo '<script> alert(" ليس لكم تصريح الوولوج لهده الصفحة ");  location.replace ("../index.php"); </script>'; 
+    }
+    ?>
+    
     </div>
   </div>
-       
+        
+      
         <div class="col-9">
         <div class="panel -info">
             <div class="t"> 
@@ -114,7 +122,7 @@ table tr td{
        $ar=$row['ar'];
         $id=$row['id'];
         $fr=$row['fr'];
-       // $name=$row['name'];
+        $prof=$row['prof'];
         $pc=$row['pc'];
         $svt=$row['svt'];
        $m=($en+$fr+$pc+$svt+$ar)/5;
@@ -180,15 +188,15 @@ if($m<=10){
  </table>
 <br><br>
 <div class='not'> نتيجة : $res </div>
-    <br><br><hr>
-  
-
+    <br><br><br>
+  <div id='prof'>  الاستاد: $prof  </div>
+<hr>
        " ;
 
 
   }
  }         }
-  
+ 
         ?>
         
                 

@@ -128,22 +128,13 @@ require '../connect.php';
        // $email=$_POST['email'];
        // $password=$_POST['password'];
        // $password2=$_POST['password_confirm'];
-      session_start();
-if(isset($_SESSION['lev'] )){
-$lev=$_SESSION['lev'];
-
-
-}
-if($lev !="derecteur"){
-    header("location:../index.php");
-}
-   ?>
+  >
     
 <div class="container register">
                 <div class="row">
                     <div class="col-md-3 register-left">
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                        <h6><?php echo $lev; ?></h6>
+                        <h6>WELCOM</h6>
                         <p>You are 30 seconds away from earning your own money!</p>
                         <input type="submit" name="" value="Login"/><br/>
                     </div>

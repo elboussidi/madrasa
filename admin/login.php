@@ -7,7 +7,7 @@ require '../connect.php';
 
 
  if(isset($_SESSION['lev'] )){
-  if($_SESSION['lev'] == "prof" or $_SESSION['lev'] == "derecteur" ){
+  if($_SESSION['lev'] == "prof" or $_SESSION['lev'] == "derecteur" or $_SESSION['lev'] == "student"){
         header("location:../index.php");
  }}
 ?>
@@ -56,10 +56,12 @@ require '../connect.php';
                 $_SESSION['lev']=$row['lev'];
                 
          }//END WHILE
-          
-         if ($_SESSION['lev']=="derecteur" OR $_SESSION['lev']=="prof"){
+          $aa=$_SESSION['name'];
+         if ($_SESSION['lev']=="derecteur" OR $_SESSION['lev']=="prof" or $_SESSION['lev']=="student") {
              echo '<div class="alert alert-success" role="alert">
- your login is done redirect to admin page
+ your login is done <br>
+ welcom '.$aa.'
+ <br>redirect to admin page
 </div>';
              echo '<meta http-equiv="refresh" content="4; \'/madrasa/admin/index.php\' /> ';
          } else {

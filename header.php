@@ -40,7 +40,7 @@ require 'connect.php';
                
           
            
-           if ($_SESSION['lev']=="derecteur" or $_SESSION['lev']=="prof"){
+           if ($_SESSION['lev']=="derecteur" or $_SESSION['lev']=="prof" or $_SESSION['lev']=="student"){
                $sname=$_SESSION['name'];
               
                $id=$_SESSION['id'];

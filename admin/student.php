@@ -32,16 +32,16 @@ require '../connect.php';
     <br><br>
     
     
-    <div class="row">
-  <div class="col-3">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active"  href="prof.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-home" aria-selected="true">profile</a>
-      <a class="nav-link"  href="member.php?id=<?php echo $_SESSION['id']; ?>" role="tab" aria-controls="v-pills-profile" aria-selected="false">member</a>
-      <a class="nav-link"  href="student.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">student</a>
-      <a class="nav-link"   href="note.php" role="tab" aria-controls="v-pills-messages" aria-selected="false">note</a>
-      <a class="nav-link" id="v-pills-settings-tab" href="mynote.php?id=<?php echo $_SESSION['id']; ?>" role="tab"  aria-selected="false">MY NOTE</a>
+    
+        <div class='row'>
+  <div class='col-3'>
+    <div class='nav flex-column nav-pills' id='v-pills-tab' role='tablist' aria-orientation='vertical'>
+    <?php include 'slaid.php'; ?>
+    
     </div>
   </div>
+        
+      
         <div class="col-9">
         <div class="panel -info">
        
@@ -55,7 +55,13 @@ require '../connect.php';
 //       }
             ?>
      <?php 
-  
+    
+  if(isset($_SESSION['lev'])){
+        $se=$_SESSION['lev'];
+       
+    } else {
+          echo '<script> alert(" ليس لكم تصريح الوولوج لهده الصفحة ");  location.replace ("../index.php"); </script>'; 
+    }
   
   $red="SELECT * FROM `usr` WHERE `lev`='student' ";
  $qq=$conect->query($red) ;
