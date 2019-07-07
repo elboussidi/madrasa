@@ -47,9 +47,6 @@ require '../connect.php';
   
   if(isset($_SESSION['lev'])){
         $se=$_SESSION['lev'];
-        if($se !== "derecteur" or $se !== "prof"){
-                            echo '<script> alert(" ليس لكم تصريح الوولوج لهده الصفحة ");  location.replace ("../index.php"); </script>'; 
-        }
     } else {
           echo '<script> alert(" ليس لكم تصريح الوولوج لهده الصفحة ");  location.replace ("../index.php"); </script>'; 
     }
@@ -99,18 +96,18 @@ if(isset($_SESSION['name'])){
                     <tr class="active">
                        
                         <td>
-                          <input class="form-control" type="text"  name="en" >
+                            <input class="form-control"  type="text"  name="en" >
                         </td>
                         <td>
-                         <input class="form-control" type="text"  name="ar" >
+                            <input class="form-control" type="number" maxlength="2" name="ar" >
                         </td>
                           <td>
-                          <input class="form-control" type="text"  name="fr" >
+                              <input class="form-control" type="number" maxlength="2" name="fr" >
                             
                         </td>  <td>
-                            <input class="form-control" type="text"  name="pc" >
+                            <input class="form-control" type="number" maxlength="2" name="pc" >
                         </td>  <td>
-                          <input class="form-control" type="text"  name="svt" >
+                            <input class="form-control" maxlength="2" type="number"  name="svt" >
                         </td>
                        
                     </tr>

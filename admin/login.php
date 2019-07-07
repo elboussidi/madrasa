@@ -56,21 +56,21 @@ require '../connect.php';
                 $_SESSION['lev']=$row['lev'];
                 
          }//END WHILE
+         if(isset($_SESSION['lev'] )){
           $aa=$_SESSION['name'];
          if ($_SESSION['lev']=="derecteur" OR $_SESSION['lev']=="prof" or $_SESSION['lev']=="student") {
              echo '<div class="alert alert-success" role="alert">
- your login is done <br>
- welcom '.$aa.'
- <br>redirect to admin page
-</div>';
+ login success <b>
+ welcom </b> <h4>'.$aa.' </h4></div>';
+
+ }
              echo '<meta http-equiv="refresh" content="4; \'/madrasa/admin/index.php\' /> ';
          } else {
              echo '<div class="alert alert-danger" role="alert">
  sorry eroor password or username !
 </div> ';
-         }
-          
-      }//END IF $logqr
+        
+         }      }//END IF $logqr
       }// END IF ISSET
     
     ?>

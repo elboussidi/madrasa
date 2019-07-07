@@ -2,6 +2,7 @@
     if(isset($_SESSION['lev'])){
         $i= $_SESSION['id'] ;
         $tstlev=$_SESSION['lev'];
+        $tstname=$_SESSION['name'];
     echo "  <a class='nav-link active'  href='prof.php?id=$i' role='tab' aria-controls='v-pills-home' aria-selected='true'>profile</a> ";
     if($tstlev == "derecteur"){
         echo "
@@ -14,7 +15,7 @@
 echo "      
         <a class='nav-link' href='student.php' role='tab' aria-controls='v-pills-messages' aria-selected='false'>student</a>
         <a class='nav-link' href='note.php' role='tab' aria-controls='v-pills-messages' aria-selected='false'>note</a>
-         <a class='nav-link' href='note.php' role='tab' aria-controls='v-pills-messages' aria-selected='false'>MY student</a>
+         <a class='nav-link' href='mystu.php?name=$tstname' role='tab' aria-controls='v-pills-messages' aria-selected='false'>MY student</a>
     "; 
             } elseif ($tstlev == "student"){
                  echo "  

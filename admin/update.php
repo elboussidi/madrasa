@@ -111,18 +111,18 @@ if(!$reedqr){
                     <tr class='active'>
                        
                         <td>
-                          <input class='form-control' type='text' value='$en' name='en' >
+                          <input class='form-control' type='number' value='$en' name='en' >
                         </td>
                         <td>
-                         <input class='form-control' type='text' value='$ar'  name='ar' >
+                         <input class='form-control' type='number' value='$ar'  name='ar' >
                         </td>
                           <td>
-                          <input class='form-control' type='text' value='$fr' name='fr' >
+                          <input class='form-control' type='number' value='$fr' name='fr' >
                             
                         </td>  <td>
-                            <input class='form-control' type='text' value='$pc'  name='pc' >
+                            <input class='form-control' type='number' value='$pc'  name='pc' >
                         </td>  <td>
-                          <input class='form-control' type='text' value='$svt' name='svt' >
+                          <input class='form-control' type='number' value='$svt' name='svt' >
                         </td>
                        
                     </tr>

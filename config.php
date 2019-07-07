@@ -36,7 +36,7 @@ require 'connect.php';
     alert("good");
     
     </script>';
-       header("location:admin/index/member.php");
+       header("location:admin/member.php");
     } else {
         
     
