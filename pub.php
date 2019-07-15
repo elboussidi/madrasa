@@ -1,7 +1,7 @@
 <?php  require 'connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
-    <title>bb</title>
+    <title>resulte</title>
      <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -70,6 +70,7 @@ table tr td{
 body{
     width: 90%;
     margin:  0 auto ;
+   
 }
 </style>
 
@@ -191,43 +192,26 @@ $res="<div> ناجح </div>";}
        " ;
         
 
-      
-
    
   } }
 
     ?>
          <form  method="POST"  action="">
-<br><br><br>
-       <br>
 
-    <br><br>
        <br><div class="input-group mb-3" style=" width:50% ;">
   <input type="text"  name="name" class="form-control" placeholder="your name her" >
   <br>
-   <input class="btn btn-outline-secondary"  type="submit"  name="submit" value="recherche" > 
+   <input class="btn btn-outline-secondary"  type="submit"  name="submit" value="بحث" > 
   </div>
 </div>
-            
-            
-
+    
      </center>
      <br>
    </div>              
-
     
-<!--       
 
-       
-  <a href="add_info.php">اضافة بيانات </a>  <br><br><br><br>-->
- 
-</center> </body>
-</html>
 <?php mysqli_close($conect) ?>
-                
-           </center>
-            
-    
+     <?php include '../footer.php'; ?>
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="/js/bootstrap.min.js"></script>

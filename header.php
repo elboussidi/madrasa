@@ -43,7 +43,7 @@ require 'connect.php';
                $id=$_SESSION['id'];
              echo "
           <a href='prof.php?id=$id'> <button class='btn btn-outline-success my-2 my-sm-0' type='submit' data-toggle='modal' data-target='#exampleModal'>  $sname </button></a>
-            &emsp;    <a href='admin/logout.php'> <button class='btn btn-outline-danger my-2 my-sm-0' type='submit' data-toggle='modal' data-target='#exampleModal'>log out</button></a>
+            &emsp;    <a href='logout.php'> <button class='btn btn-outline-danger my-2 my-sm-0' type='submit' data-toggle='modal' data-target='#exampleModal'>log out</button></a>
                ";
            } }
          else {

@@ -47,7 +47,6 @@ require '../connect.php';
   if(isset($_SESSION['lev'])){
         $se=$_SESSION['lev'];
         if($se !== "derecteur" or $se !== "prof"){
-                            echo '<script> alert(" ليس لكم تصريح الوولوج لهده الصفحة ");  location.replace ("../index.php"); </script>'; 
         }
     } else {
           echo '<script> alert(" ليس لكم تصريح الوولوج لهده الصفحة ");  location.replace ("../index.php"); </script>'; 
@@ -111,7 +110,7 @@ if(!$reedqr){
                     <tr class='active'>
                        
                         <td>
-                          <input class='form-control' type='number' value='$en' name='en' >
+                          <input class='form-control' type='number' value=' mysqli_real_escape_string($conect,$en)' name='en' >
                         </td>
                         <td>
                          <input class='form-control' type='number' value='$ar'  name='ar' >

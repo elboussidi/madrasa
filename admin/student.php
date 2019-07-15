@@ -105,13 +105,13 @@ require '../connect.php';
                 <tbody>
                     <tr>
                         <td><?php echo $id;?></td>
-                        <td><a href="prof.php?id=<?php echo $id; ?>"> <?php echo $name;?></a></td>
-                        <td><?php echo $newdat; ?></td>                        
-                        <td><?php echo $lev;?></td>
-		<td><span class="status text-success">&bull;</span><?php ?><?php echo $email;?> </td>
+                        <td><a href="prof.php?id=<?phpecho mysqli_real_escape_string($conect,$id); ?>"> <?php echo  mysqli_real_escape_string($conect,$name);?></a></td>
+                        <td><?php echo  mysqli_real_escape_string($conect,$newdat); ?></td>                        
+                        <td><?php echo mysqli_real_escape_string($conect,$lev);?></td>
+		<td><span class="status text-success">&bull;</span><?php ?><?php echo  mysqli_real_escape_string($conect,$email);?> </td>
 			<td>
 			<a href="del.php?ids=<?php echo $id;?>" class="btn btn-danger" title="Settings" data-toggle="tooltip"> del  </a>
-                       <a href="add.php?id=<?php echo $id; ?>&name=<?php echo $name; ?>" > <button type="button" class="btn btn-success">add note</button></a> 
+                       <a href="add.php?id=<?php echo  mysqli_real_escape_string($conect,$id); ?>&name=<?php echo  mysqli_real_escape_string($conect,$name); ?>" > <button type="button" class="btn btn-success">add note</button></a> 
                         
 						</td>
                     </tr>
@@ -120,7 +120,6 @@ require '../connect.php';
         </div>
     
  
-
 
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>

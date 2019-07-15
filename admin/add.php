@@ -137,6 +137,11 @@ if(isset($_SESSION['name'])){
                          $fr= $_POST['fr'];  
                            $pc= $_POST['pc'];  
                              $svt= $_POST['svt'];  
+                             if(empty($en) or empty($ar) or empty($fr) or empty($pc) or empty($svt)){
+                                 echo ' <div class="col-md-8 offset-md-2"><div class="alert alert-danger" role="alert"> 
+                                 لايمكن ترك حقل فارغ</div>';
+                             }else{
+                                 
                              
                              
 $tst="SELECT * FROM `note`";
@@ -160,9 +165,9 @@ if($namen == $nametst){
                     // echo '<div class="alert alert-danger" role="alert"> error add</div></div>';    
                      die("error add".mysqli_error($conect));                
 }}}
-                 }
+                 }}
                 ?>
-
+<?php include '../footer.php'; ?>
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="../js/bootstrap.min.js"></script>
